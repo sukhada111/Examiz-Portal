@@ -1,6 +1,26 @@
-<?php
-include('header.php');
-?>
+<!-- IGNORE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Examiz</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".hamburger .hamburger__inner").click(function(){
+			  $(".wrapper").toggleClass("active")
+			})
+
+			$(".top_navbar .fas").click(function(){
+			   $(".profile_dd").toggleClass("active");
+			});
+		})
+	</script>
+</head>
+<body>
+
 <div class="wrapper">
   <div class="top_navbar">
     <div class="hamburger">
@@ -11,8 +31,9 @@ include('header.php');
        </div>
     </div>
     <div class="menu">
-      <a href="../index.php"><img src="../resources/img/logo-examiz.png" alt="Examiz Logo" class="logo" style="height:80px;width:auto;"></a>
-
+      <div class="logo">
+        Examiz
+      </div>
       <div class="right_menu">
         <ul>
           <li>Logout <i class="fas fa-user"></i>
@@ -36,51 +57,38 @@ include('header.php');
               </div>
               <div class="profile_info">
                  <p style="color:white">Welcome</p>
-                 <p class="profile_name">Alex John</p>
+                 <p class="profile_name">Jay Khatri</p>
               </div>
             </div>
             <ul>
               <li>
-                <a href="profile.php">
+                <a href="profile.php" class="active">
                   <span class="icon"><i class="fas fa-id-card"></i></span>
                   <span class="title">My Profile</span>
                 </a>
               </li>
               <li>
-                <a href="examdash.php">
+                <a href="#">
                   <span class="icon"><i class="fas fa-graduation-cap"></i></span>
-                  <span class="title">Exam Dashboard</span>
+                  <span class="title">Create Exam</span>
                 </a>
               </li>
               <li>
-                <a href="subscribed.php">
+                <a href="#">
                   <span class="icon"><i class="fas fa-bell"></i></span>
-                  <span class="title">Subscribed exams</span>
+                  <span class="title">Previous Exams</span>
                 </a>
               </li>
-              <li>
-                <a href="compet.php">
-                  <span class="icon"><i class="fas fa-chart-pie"></i></span>
-                  <span class="title">Competitive exams</span>
-                </a>
-              </li>
-              <li>
-                <a href="testprep.php">
-                  <span class="icon"><i class="fas fa-book"></i></span>
-                  <span class="title">Test Prep</span>
-                </a>
-              </li>
+              
             </ul>
           </div>
       </div>
       <!-- <div class="container">
        
       </div> -->
-      <div id="content-wrapper" class="d-flex flex-column">
-
-  <!-- Main Content -->
-  <div id="content">
-  <!-- </div>
+  </div>
   
-</div>	 -->
+</div>	
 
+</body>
+</html>

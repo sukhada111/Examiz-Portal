@@ -7,7 +7,7 @@ include('sidebar.php');
 ?>
  <style>
      .btn{
-         background-color:#48d1cc;
+         background-color:#1abc9c;
          color:white;
      }
      .card:hover{

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 *{
   margin: 0;
@@ -6,7 +6,7 @@
   list-style: none;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper{
@@ -156,7 +156,7 @@
 
 .main_container .sidebar .profile p:first-child{
   font-size: 14px;
-  color: #80CBC4;
+  color: #1abc9c;
   margin-bottom: 3px;
 }
 

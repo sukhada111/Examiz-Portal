@@ -11,7 +11,7 @@ include('header.php');
        </div>
     </div>
     <div class="menu">
-      <a href="../index.php"><img src="../resources/img/logo-examiz.png" alt="Examiz Logo" class="logo" style="height:80px;width:auto;"></a>
+    <a href="#"><img src="../resources/img/logo-examiz.png" alt="Examiz Logo" class="logo" style="height:80px;width:auto;"></a>
 
       <div class="right_menu">
         <ul>
@@ -36,38 +36,32 @@ include('header.php');
               </div>
               <div class="profile_info">
                  <p style="color:white">Welcome</p>
-                 <p class="profile_name">Alex John</p>
+                 <p class="profile_name">Jay Khatri</p>
               </div>
             </div>
             <ul>
-              <li>
-                <a href="profile.php">
+            <li>
+                <a href="profile.php" class="active">
                   <span class="icon"><i class="fas fa-id-card"></i></span>
                   <span class="title">My Profile</span>
                 </a>
               </li>
               <li>
-                <a href="examdash.php">
+                <a href="create.php">
                   <span class="icon"><i class="fas fa-graduation-cap"></i></span>
-                  <span class="title">Exam Dashboard</span>
+                  <span class="title">Create Exam</span>
                 </a>
               </li>
               <li>
-                <a href="subscribed.php">
+                <a href="previous.php">
+                  <span class="icon"><i class="fas fa-history"></i></span>
+                  <span class="title">Previous Exams</span>
+                </a>
+              </li>
+              <li>
+                <a href="manage.php">
                   <span class="icon"><i class="fas fa-bell"></i></span>
-                  <span class="title">Subscribed exams</span>
-                </a>
-              </li>
-              <li>
-                <a href="compet.php">
-                  <span class="icon"><i class="fas fa-chart-pie"></i></span>
-                  <span class="title">Competitive exams</span>
-                </a>
-              </li>
-              <li>
-                <a href="testprep.php">
-                  <span class="icon"><i class="fas fa-book"></i></span>
-                  <span class="title">Test Prep</span>
+                  <span class="title">Manage Exams</span>
                 </a>
               </li>
             </ul>
