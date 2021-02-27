@@ -42,31 +42,31 @@ include('header.php');
             </div>
             <ul>
               <li>
-                <a href="profile.php" class="active">
+                <a href="profile.php">
                   <span class="icon"><i class="fas fa-id-card"></i></span>
                   <span class="title">My Profile</span>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="examdash.php">
                   <span class="icon"><i class="fas fa-graduation-cap"></i></span>
                   <span class="title">Exam Dashboard</span>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="subscribed.php">
                   <span class="icon"><i class="fas fa-bell"></i></span>
                   <span class="title">Subscribed exams</span>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="compet.php">
                   <span class="icon"><i class="fas fa-chart-pie"></i></span>
                   <span class="title">Competitive exams</span>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="testprep.php">
                   <span class="icon"><i class="fas fa-book"></i></span>
                   <span class="title">Test Prep</span>
                 </a>
