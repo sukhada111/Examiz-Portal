@@ -11,9 +11,8 @@ include('header.php');
        </div>
     </div>
     <div class="menu">
-      <div class="logo">
-        Examiz
-      </div>
+      <a href="../index.php"><img src="../resources/img/logo-examiz.png" alt="Examiz Logo" class="logo" style="height:80px;width:auto;"></a>
+
       <div class="right_menu">
         <ul>
           <li>Logout <i class="fas fa-user"></i>
