@@ -15,13 +15,7 @@ include('header.php');
 
       <div class="right_menu">
         <ul>
-          <li>Logout <i class="fas fa-user"></i>
-            <!-- <div class="profile_dd">
-               <div class="dd_item">Profile</div>
-               <div class="dd_item">Change Password</div>
-               <div class="dd_item">Logout</div>
-            </div> -->
-          </li>
+          <li>Logout <i class="fa fa-user"></i></li>
         </ul>
       </div>
     </div>

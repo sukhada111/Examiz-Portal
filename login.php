@@ -1,7 +1,10 @@
+
+<?php include('database_login.php');  ?>
 <?php
 //new index file
 session_start();
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -221,7 +224,7 @@ a{color:inherit;text-decoration:none}
         <div class="row">
         <div class="login-wrap">
         <div class="login-html">
-        <form action="login_sess.php" method="post">
+        <form action="login.php" method="post">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
            
@@ -280,7 +283,7 @@ a{color:inherit;text-decoration:none}
                    <h3 style="color:white">Click on the button below to Sign up!</h3>
                    <br>
                    <div class="group">
-                        <input type="submit" class="button si" value="Sign Up">
+                        <input type="submit"  name="login" class="button si" value="Sign Up">
                     </div>
             </div>
             
