@@ -77,19 +77,19 @@ $type="";
 		  }
 	}
 
-    if (isset($_POST["collegename"])) {
-		if (empty($_POST["collegename"])) {
+    if (isset($_POST["collegefname"])) {
+		if (empty($_POST["collegefname"])) {
 		  $colnameErr = "College Name is required";
 		  array_push($errors,$colnameErr);
 		} 
         else {
-            $col =$_POST["collegename"];
+            $col =$_POST["collegefname"];
           }
     }
 
     if (isset($_POST["year"])) {
 		if (empty($_POST["year"])) {
-		  $yearErr = "Year is required";
+		  $yearErr = "Grade is required";
 		  array_push($errors,$yearErr);
 		} 
         else {
@@ -97,26 +97,7 @@ $type="";
           }
     }
 
-    if (isset($_POST["branch"])) {
-		if (empty($_POST["branch"])) {
-		  $branchErr = "Branch is required";
-		  array_push($errors,$branchErr);
-		} 
-        else {
-            $branch=$_POST["branch"];
-          }
-    }
-
-    if (isset($_POST["sem"])) {
-		if (empty($_POST["sem"])) {
-		  $semErr = "Semester is required";
-		  array_push($errors,$semErr);
-		} 
-        else {
-            $sem=$_POST["sem"];
-          }
-    }
-
+    
     if (isset($_POST["uname"])) {
 		if (empty($_POST["uname"])) {
 		  $unameErr = "Username is required";
@@ -141,7 +122,7 @@ $type="";
 		  }
 	}
     $type="student";
-    $stud="ug";
+    $stud="hs";
 
 	
 	if(isset($_POST["submit"])){
@@ -182,6 +163,3 @@ if(mysqli_stmt_prepare($stmt,$sqlin)){
 	}
 	
 	
-  
-	
-?>

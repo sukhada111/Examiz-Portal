@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('header.php');
 ?>
 <div class="wrapper">
@@ -15,7 +16,7 @@ include('header.php');
 
       <div class="right_menu">
         <ul>
-          <li>Logout <i class="fas fa-user"></i>
+          <li><a href="../logout.php"> Logout <i class="fas fa-user"></a></i>
             <!-- <div class="profile_dd">
                <div class="dd_item">Profile</div>
                <div class="dd_item">Change Password</div>
@@ -36,12 +37,12 @@ include('header.php');
               </div>
               <div class="profile_info">
                  <p style="color:white">Welcome</p>
-                 <p class="profile_name">Jay Khatri</p>
+                 <p class="profile_name"><?php echo $_SESSION['username'];?></p>
               </div>
             </div>
             <ul>
             <li>
-                <a href="profile.php" class="active">
+                <a href="orgprofile.php" class="active">
                   <span class="icon"><i class="fas fa-id-card"></i></span>
                   <span class="title">My Profile</span>
                 </a>

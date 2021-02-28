@@ -1,31 +1,22 @@
+<?php include('server.php')  ?>
 
-<?php include('database_login.php');  ?>
-<?php
-//new index file
-// session_start();
-?>
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examiz | Smart Exam Portal </title>
+    <title>Examiz</title>
 
-    
+    <link rel="stylesheet" href="resources/css/style_index.css">
     <link rel="stylesheet" href="resources/css/queries.css">
     <link rel="stylesheet" href="vendors/css/normalize.css">
     <link rel="stylesheet" href="vendors/css/ionicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="vendors/css/grid.css">
-    <link rel="stylesheet" href="resources/css/style_index.css">
-    
     <style>
         body{
-            color:#cccccc;
+            color: #cccccc;
         }
-    
         
         *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
@@ -36,19 +27,18 @@ a{color:inherit;text-decoration:none}
     width:100%;
     margin:auto;
     max-width:525px;
-    min-height:670px;
+    min-height:850px;
     position:relative;
     font:600 16px/18px 'Open Sans',sans-serif;
-    background:url("resources/img/loginbg.jpg") no-repeat center;
-
+    background:url(https://images.unsplash.com/photo-1537202108838-e7072bad1927?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1885&q=80) no-repeat center;
     box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
     width:100%;
     height:100%;
     position:absolute;
-    padding:90px 70px 50px 70px;
-    background:rgba(26, 27, 28,0.75)
+    padding:40px 70px 50px 70px;
+    background:#1abc9c;
 ;}
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -83,10 +73,9 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
     color:#fff;
-    border-color:#3498db;
+    border-color:#02a3de;
 }
 .login-form{
-    min-height:345px;
     position:relative;
     perspective:1000px;
     transform-style:preserve-3d;
@@ -123,11 +112,11 @@ a{color:inherit;text-decoration:none}
     -webkit-text-security:circle;
 }
 .login-form .group .label{
-    color:#aaa;
+    color:white;
     font-size:12px;
 }
 .login-form .group .button{
-    background:#3498db;
+    background:#02a3de;
 }
 .login-form .group label .icon{
     width:15px;
@@ -163,6 +152,7 @@ a{color:inherit;text-decoration:none}
 .login-form .group .check:checked + label .icon{
     background:#02a3de;
 }
+ 
 .login-form .group .check:checked + label .icon:before{
     transform:scale(1) rotate(45deg);
 }
@@ -185,62 +175,67 @@ a{color:inherit;text-decoration:none}
     text-align:center;
 }
     </style>
+  
 </head>
 <body>
 
     <!-- HEADER AND NAVBAR -->
-        <nav>
-            <div class="row">
-                <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo"></a>
-                <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo-black"></a>
-
-                <ul class="main-nav">
-                <li><a href="#">About Us</a></li>
-                   <?php
-                        // if(count($_SESSION)>0)
-                        // {
-                            ?>
-                            
-                            <!-- <li><a href="logout.php">Logout</a></li>
-                            <li><a href="myProfile.php"><i class="ion-ios-person-outline icon-small" style="color: #ddd;"></i><?php?></a></li>
-                             -->
-                            <?php
-                        // }
-                        // else
-                        // {
-                   ?>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Sign Up</a></li>
-                    <?php
-                        //}
-                    ?>
-
-                </ul>
-            </div>
-        </nav>
-        <section class="section-form">
     
-       
-        <br>
+    <section class="section-form">
+    
         <div class="row">
         <div class="login-wrap">
         <div class="login-html">
-        <form action="login.php" method="post">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
-            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <form action="server.php" method="post">
+        
+           <!--<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">UnderGrad</label> -->
+           <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Organization</label>
            
             <div class="login-form">
-                <div class="sign-in-htm">
+                <!-- <div class="sign-in-htm">
+                   
+                </div> -->
+               
+                <div class="sign-up-htm">
+                    <br><br>
                     <div class="group">
                     <br>
-                        <label for="user" class="label">Username</label>
-                        <input id="user" type="text" class="input" name="username">
+                        <label for="clgname" class="label">College Name</label>
+                        <input id="clgname" type="text" class="input" name="clgname">
+                        <br>
+                        <?php if(isset($_POST["clgname"]))
+                        {
+                            ?>
+                        <span class="error"><?php echo $clgnameErr;?> </span>
+                        <br>
+                        <?php
+                        }
+                        ?>
+                    <br>
+                    </div>
+                    <div class="group">
+                    
+                        <label for="location" class="label">Location</label>
+                        <input id="location" type="text" class="input" name="location">
+                        <br>
+                        <?php if(isset($_POST["location"]))
+                        {
+                            ?>
+                        <span class="error"><?php echo $locationErr;?> </span>
+                        <br>
+                        <?php
+                        }
+                        ?>
+                    <div class="group">
+                    <br>
+                        <label for="username" class="label">Username</label>
+                        <input id="username" type="text" class="input" name="username">
                         <br>
                         <?php if(isset($_POST["username"]))
                         {
                             ?>
-                        <span class="error"><?php echo $unameErr;?> </span>
-                        <span class="error"><?php echo $wrongErr;?> </span>
+                        <span class="error"><?php echo $usernameErr;?> </span>
+                        
                         <br>
                         <?php
                         }
@@ -254,42 +249,45 @@ a{color:inherit;text-decoration:none}
                         <?php if(isset($_POST["pwd"]))
                         {
                             ?>       
-                        <span class="error"><?php echo $passErr; ?> </span>  
+                        <span class="error"><?php echo $pwdErr; ?> </span>  
                         <?php
                         }
                         ?>
                     <br>
                     </div>
+                    <div class="group">
+                        <label for="check" class="label">Confirm password</label>
+                        <input id="check" name="check" type="password" class="input" data-type="password">
+                        <br>
+                        <?php if(isset($_POST["check"]))
+                        {
+                            ?>       
+                        <span class="error"><?php echo $checkErr; ?> </span>  
+                        <?php
+                        }
+                        ?>
+                    <br>
+                    </div>
+                    
+                    <br>
+                    </div>
+                    
                     <br>
                     <div class="group">
                         <input id="check" name="agree" type="checkbox" class="check" checked>
-                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                        <label for="check"><span class="icon"></span> Agree to Terms and Conditions</label>
                     <br>
                      
                     </div>
                     <div class="group">
-                        <input type="submit" name="login" class="button" value="Sign In">
-                    </div>
-                    
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <a href="#forgot"><h5>Forgot Password?</h5></a>
+                        <input type="submit" name="submit" class="button" value="Sign Up">
                     </div>
 
-                </div>
-               
-                <div class="sign-up-htm">
-                    <br><br>
-                   <h3 style="color:white">Don't have an account?</h3><br>
-                   <h3 style="color:white">Click on the button below to Sign up!</h3>
-                   <br>
-                   <div class="group">
-                        <input type="submit"  name="login" class="button si" value="Sign Up">
                     </div>
             </div>
             
         </div>
-        
+      
         </div>
         
     </div> 
@@ -299,28 +297,7 @@ a{color:inherit;text-decoration:none}
       
     </section>
 
-    
-
-    <footer>
-        <div class="row">
-            <div class="col span-1-of-2">
-                <ul class="footer-nav">
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Sign Up as Student</a></li>
-                    <li><a href="#">Sign Up as Organization</a></li>
-
-
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <p>
-                Copyright &copy; 2021 by Examiz. All rights reserved.
-            </p>
-        </div>
-    </footer>
-
- 
+   
 
 <!-- Js plugins -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -336,4 +313,3 @@ a{color:inherit;text-decoration:none}
 </body>
 
 </html>
-
