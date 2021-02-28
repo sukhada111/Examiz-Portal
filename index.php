@@ -217,9 +217,9 @@ if(count($_SESSION)>0)
         <div class="row">
             <div class="col span-1-of-2">
                 <ul class="footer-nav">
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Sign Up as Student</a></li>
-                    <li><a href="#">Sign Up as Organization</a></li>
+                    <li><a href="aboutUs.php">About us</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="login.php">Login</a></li>
 
 
                 </ul>

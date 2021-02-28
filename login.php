@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examiz | Smart Exam Portal </title>
+    <title>Examiz | Login</title>
 
     
     <link rel="stylesheet" href="resources/css/queries.css">
@@ -185,35 +185,38 @@ a{color:inherit;text-decoration:none}
 <body>
 
     <!-- HEADER AND NAVBAR -->
-        <nav>
+    <nav>
             <div class="row">
                 <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo"></a>
                 <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo-black"></a>
 
                 <ul class="main-nav">
-                <li><a href="#">About Us</a></li>
+                <li><a href="aboutUs.php">About Us</a></li>
                    <?php
-                        // if(count($_SESSION)>0)
-                        // {
+                        if(count($_SESSION)>0)
+                        {
                             ?>
                             
-                            <!-- <li><a href="logout.php">Logout</a></li>
-                            <li><a href="myProfile.php"><i class="ion-ios-person-outline icon-small" style="color: #ddd;"></i><?php?></a></li>
-                             -->
+                            <li><a href="logout.php">Logout</a></li>
+                            <li><a href="myProfile.php"><i class="ion-ios-person-outline icon-small" style="color: #333;"></i><?php echo $_SESSION['username'];?></a></li>
+                            
                             <?php
-                        // }
-                        // else
-                        // {
+                        }
+                        else
+                        {
                    ?>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="login.php">Login</a></li>
                     <?php
-                        //}
+                        }
                     ?>
+                 
+
 
                 </ul>
             </div>
         </nav>
+
+
         <section class="section-form">
     
        
@@ -301,9 +304,9 @@ a{color:inherit;text-decoration:none}
         <div class="row">
             <div class="col span-1-of-2">
                 <ul class="footer-nav">
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Sign Up as Student</a></li>
-                    <li><a href="#">Sign Up as Organization</a></li>
+                    <li><a href="aboutUs.php">About us</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="login.php">Login</a></li>
 
 
                 </ul>
@@ -315,7 +318,6 @@ a{color:inherit;text-decoration:none}
             </p>
         </div>
     </footer>
-
  
 
 <!-- Js plugins -->
