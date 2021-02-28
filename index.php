@@ -76,6 +76,8 @@ session_start();
                 <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo-black"></a>
 
                 <ul class="main-nav">
+                <li><a href="index.php">Home</a></li>
+               
                 <li><a href="aboutUs.php">About Us</a></li>
                    <?php
                         if(count($_SESSION)>0)
@@ -83,7 +85,7 @@ session_start();
                             ?>
                             
                             <li><a href="logout.php">Logout</a></li>
-                            <li><a href="myProfile.php"><i class="ion-ios-person-outline icon-small" style="color: #333;"></i><?php echo $_SESSION['username'];?></a></li>
+                            <li><a href=""><i class="ion-ios-person-outline icon-small" style="color: #ddd;"></i><?php echo $_SESSION['username'];?></a></li>
                             
                             <?php
                         }

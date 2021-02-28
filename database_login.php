@@ -43,7 +43,7 @@ $errors = array();
                   {  
                     $_SESSION['username'] = $uname;
                     $_SESSION['success'] = "You are now logged in";
-                    header('Location: index.php?LoginSuccess'); 
+                    header('Location: index.php'); 
                   }  
                   else  
                   {  

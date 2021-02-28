@@ -1,7 +1,4 @@
 <?php
-session_start();
-?>
-<?php
 $dbHost = "localhost";
 $dbUser = "root";
 $dbPass = "";
@@ -77,19 +74,19 @@ $type="";
 		  }
 	}
 
-    if (isset($_POST["collegename"])) {
-		if (empty($_POST["collegename"])) {
+    if (isset($_POST["collegefname"])) {
+		if (empty($_POST["collegefname"])) {
 		  $colnameErr = "College Name is required";
 		  array_push($errors,$colnameErr);
 		} 
         else {
-            $col =$_POST["collegename"];
+            $col =$_POST["collegefname"];
           }
     }
 
     if (isset($_POST["year"])) {
 		if (empty($_POST["year"])) {
-		  $yearErr = "Grade is required";
+		  $yearErr = "Year is required";
 		  array_push($errors,$yearErr);
 		} 
         else {
@@ -97,7 +94,26 @@ $type="";
           }
     }
 
-    
+    if (isset($_POST["branch"])) {
+		if (empty($_POST["branch"])) {
+		  $branchErr = "Branch is required";
+		  array_push($errors,$branchErr);
+		} 
+        else {
+            $branch=$_POST["branch"];
+          }
+    }
+
+    if (isset($_POST["sem"])) {
+		if (empty($_POST["sem"])) {
+		  $semErr = "Semester is required";
+		  array_push($errors,$semErr);
+		} 
+        else {
+            $sem=$_POST["sem"];
+          }
+    }
+
     if (isset($_POST["uname"])) {
 		if (empty($_POST["uname"])) {
 		  $unameErr = "Username is required";
@@ -122,7 +138,6 @@ $type="";
 		  }
 	}
     $type="student";
-    $stud="hs";
 
 	
 	if(isset($_POST["submit"])){
@@ -134,7 +149,7 @@ $type="";
     $stmt = mysqli_stmt_init($db);
 
     if(mysqli_stmt_prepare($stmt,$sqlin)){
-        mysqli_stmt_bind_param($stmt, "sssssssss",$fname,$roll,$col,$year,$sem,$branch,$mail,$uname,$stud);
+        mysqli_stmt_bind_param($stmt, "sssssssss",$fname,$roll,$col,$year,$sem,$branch,$mail,$uname,$type);
         mysqli_stmt_execute($stmt);
     
         // Close statement
@@ -143,6 +158,8 @@ $type="";
 	    
 
       
+		
+	
 //user table
 $sqlin = "INSERT into user(username, password,login_role) VALUES (?,?,?)";
 // $result = mysqli_query($db, $sqlin) or die("database error:". mysqli_error($db));
@@ -155,11 +172,53 @@ if(mysqli_stmt_prepare($stmt,$sqlin)){
 	// Close statement
 	mysqli_stmt_close($stmt);
 }
-		$_SESSION['username'] = $uname;
-		$_SESSION['success'] = "You are now logged in";
+	
 		header("Location: ../index.php");
 		
 	}
 	}
 	
+	//Login Part
+// 	if (isset($_POST['login'])) {
+//     $email = mysqli_real_escape_string($db, $_POST['email']);
+//     $pwd = mysqli_real_escape_string($db, $_POST['password']);
+
+//     $unameErr = $passErr = $wrongErr = $notexistErr = "";
+  
+//     if (empty($email)) {
+//         $mailErr = "Email ID is required";
+//         array_push($errors, $mailErr);
+//     }
+//     if (empty($pwd)) {
+//         $passErr = "Password is required";
+//         array_push($errors, $passErr);
+//     }
+  
+//     if (count($errors) == 0) {
+//         $query = "SELECT * FROM student_data WHERE email = '$email'";  
+//         $result = mysqli_query($db, $query);  
+//         if(mysqli_num_rows($result) > 0)  
+//         {  
+//              while($row = mysqli_fetch_array($result))  
+//              {  
+//                   if(password_verify($pwd, $row["psswd"]))  
+//                   {  
+//                     header('Location: login.php?LoginSuccess'); 
+//                   }  
+//                   else  
+//                   {  
+//                     $wrongErr = "Wrong username/password combination";
+//                     array_push($errors, $wrongErr);
+//                   }  
+//              }  
+//         }  
+//         else  
+//         {  
+//              $wrongErr = "User does not exist! Sign Up for more...";
+//              array_push($errors, $notexistErr);
+//         }  
+//    } 
+// 	}
+  
 	
+?>

@@ -54,10 +54,23 @@ include('sidebar.php');
     <div class="col-md-8">
       <div class="card-body">
           <br>
-        <h5 class="card-title">Sukhada Virkar</h5>
+          <?php 
+
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "hackerbash";
+      $conn = mysqli_connect($servername, $username, $password, $dbname) or die("Connection failed: " . mysqli_connect_error());
+      $uname=$_SESSION['username'];
+      $sql="SELECT * FROM student WHERE username='$uname'";
+      $result = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
+      $record = mysqli_fetch_array($result);
+      ?>
+        <h5 class="card-title">Username: <?php echo $record['username'];?></h5>
         <br>
-        <p class="card-text">K J Somaiya College of Engineering</p>
-        <p class="card-text">Year of study: TY</p>
+        <p class="card-text">Name: <?php echo $record['student_name'];?></p>
+        <p class="card-text">Institution Name: <?php echo $record['college_name'];?></p>
+        <p class="card-text">Year of study: <?php echo $record['year'];?></p>
         <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
       </div>
     </div>

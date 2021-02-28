@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <?php
-
+session_start();
 include('header.php');
 include('sidebar.php');
 
@@ -40,9 +40,8 @@ $record = mysqli_fetch_array($result);
         <p class="card-text">Total Marks:<?php echo $record['marks'];?> </p>
         <p class="card-text">Medium:<?php echo $record['medium'];?> </p>
         <p class="card-text">Duration:<?php echo $record['duration'];?> hours </p>
-        <p class="card-text">Link:<a><?php echo $record['link'];?></a> </p>
-        <a href="#" class="btn"><i class="fa fa-bell" aria-hidden="true"></i> Subscribe</a>
-        <a href="#" class="btn">Know more</a>
+        <p class="card-text">Link:<a><?php echo $record['meet_link'];?></a> </p>
+       
       </div>
     </div>
 </div>

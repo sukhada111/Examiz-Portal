@@ -3,6 +3,8 @@ session_start();
 ?>
 <?php
 include('header.php');
+
+
 ?>
 <div class="wrapper">
   <div class="top_navbar">
@@ -18,7 +20,7 @@ include('header.php');
 
       <div class="right_menu">
         <ul>
-          <li>Logout <i class="fa fa-user"></i></li>
+          <li><a href="../logout.php">Logout <i class="fa fa-user"></i></a></li>
         </ul>
       </div>
     </div>

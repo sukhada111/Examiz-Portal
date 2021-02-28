@@ -11,7 +11,7 @@ setcookie($sess_name,"",time()-3600,"/");
 setcookie('username',"",time()-3600,"/");
 
 
-header('Location: index.php');
+header('Location:index.php');
 
 
 ?>
