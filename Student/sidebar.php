@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 session_start();
-$_SESSION['username']='suuij';
+
 ?>
 <div class="wrapper">
   <div class="top_navbar">
@@ -17,7 +17,7 @@ $_SESSION['username']='suuij';
 
       <div class="right_menu">
         <ul>
-          <li>Logout <i class="fa fa-user"></i></li>
+          <li><a href="../logout.php">Logout <i class="fa fa-user"></i></a></li>
         </ul>
       </div>
     </div>

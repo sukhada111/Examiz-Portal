@@ -2,7 +2,7 @@
 <?php include('database_login.php');  ?>
 <?php
 //new index file
-session_start();
+// session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">

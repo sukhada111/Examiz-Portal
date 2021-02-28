@@ -3,7 +3,7 @@
 session_start();
 include('header.php');
 include('sidebar.php');
-$_SESSION['username']="suuij";
+
 ?>
  <style>
       .btn{
@@ -45,7 +45,7 @@ while ($row = $stmt->fetch_assoc()) {
         <p class="card-text">Subject: <?php echo $row['subject'];?></p>
         <p class="card-text">Date: <?php echo $row['date'];?></p>
         
-        <a href="" class="btn">Know more</a>
+        <a href="exam_details.php?&ex=<?php echo $row['exam_id'];?>" class="btn">Know more</a>
       </div>
     </div>
   </div>
