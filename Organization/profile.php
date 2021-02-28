@@ -34,6 +34,17 @@ include('sidebar.php');
             padding-right:50px;
         }
 </style>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "hackerbash";
+$conn = mysqli_connect($servername, $username, $password, $dbname) or die("Connection failed: " . mysqli_connect_error());
+$uname=$_SESSION['username'];
+$sql="SELECT * FROM oranization WHERE username='$uname'";
+$result = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
+$record = mysqli_fetch_array($result);
+?>
 <div class="container" align="center">
     <br>
 <h2>Welcome to Examiz!</h2>
@@ -50,10 +61,10 @@ include('sidebar.php');
     <div class="col-md-8">
       <div class="card-body">
           <br>
-        <h5 class="card-title">Username: KJSCE</h5>
+        <h5 class="card-title">Username: <?php echo $record['username']; ?></h5>
         <br>
-        <p class="card-text">Name: K J Somaiya College of Engineering</p>
-        <p class="card-text">Location: Vidyavihar</p>
+        <p class="card-text">Name:  <?php echo $record['college_name']; ?></p>
+        <p class="card-text">Location:  <?php echo $record['location']; ?></p>
         <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
       </div>
     </div>

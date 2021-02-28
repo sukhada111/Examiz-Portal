@@ -19,7 +19,52 @@ session_start();
     <link rel="stylesheet" href="vendors/css/grid.css">
     <link rel="stylesheet" href="resources/css/style_index.css">
     
-  
+  <style>
+      button{
+        display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    background-color: #3498db;
+    border: 1px solid #3498db;
+    color: #fff;
+    margin-right: 15px;
+      }
+
+      
+      .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropbtn {
+  background-color: #1abc9c;
+}
+  </style>
 </head>
 <body>
 
@@ -34,22 +79,22 @@ session_start();
                 <ul class="main-nav">
                 <li><a href="#">About Us</a></li>
                    <?php
-                        // if(count($_SESSION)>0)
-                        // {
+                        if(count($_SESSION)>0)
+                        {
                             ?>
                             
-                            <!-- <li><a href="logout.php">Logout</a></li>
-                            <li><a href="myProfile.php"><i class="ion-ios-person-outline icon-small" style="color: #ddd;"></i><?php?></a></li>
-                             -->
+                            <li><a href="logout.php">Logout</a></li>
+                            <li><a href="myProfile.php"><i class="ion-ios-person-outline icon-small" style="color: #ddd;"></i><?php echo $_SESSION['username'];?></a></li>
+                            
                             <?php
-                        // }
-                        // else
-                        // {
+                        }
+                        else
+                        {
                    ?>
                     <li><a href="#">Login</a></li>
                     <li><a href="#">Sign Up</a></li>
                     <?php
-                        //}
+                        }
                     ?>
                  
 
@@ -63,8 +108,14 @@ session_start();
             <div class="left">
             <h1>One stop Destination<br>
             for all your Exams</h1>
-            <a class="btn btn-full" href="categ.php">Sign Up as Student</a>
-            <a class="btn btn-ghost" href="aboutUs.php">Sign Up as Organization</a>
+            <div class="dropdown">
+            <button class="dropbtn">Sign Up as Student</button>
+            <div class="dropdown-content">
+            <a href="#">Junior College</a>
+            <a href="#">Undergraduate</a>
+            </div>
+            </div>
+        <a class="btn btn-ghost" href="aboutUs.php">Sign Up as Organization</a>
             </div>
         </div>
         <img src="resources/img/headbg.jpg" alt="" class="right">
@@ -77,26 +128,18 @@ session_start();
 
 <?php
 
-// if(count($_SESSION)>0)
-                        //{
+if(count($_SESSION)>0)
+                        {
                             ?>
-                            <!-- <h2>Welcome <?php //echo $_SESSION['username'];?> !</h2>
+                            <h2>Welcome <?php echo $_SESSION['username'];?> !</h2>
                             <br>
-                             -->
-                            <?php //if(isset($_SESSION['pass_msg']))
-                            //{
-                                ?>
-                                <!-- <h2 style="font-size:25px;"> -->
-                                <?php //echo $_SESSION['pass_msg'];
-                                ?>
-                                <!-- </h2> -->
-                                <?php
-                            //}
-                            ?>
                             
+                            <?php if(isset($_SESSION['pass_msg']))
+                            {
+                                ?>
                             <?php
 
-                        //}
+                        }
                         ?>
             
             <h2>Our Salient Features</h2>
