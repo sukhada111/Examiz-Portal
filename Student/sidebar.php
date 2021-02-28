@@ -3,7 +3,7 @@ session_start();
 ?>
 <?php
 include('header.php');
-session_start();
+
 
 ?>
 <div class="wrapper">

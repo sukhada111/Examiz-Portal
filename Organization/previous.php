@@ -129,13 +129,13 @@ $record = mysqli_fetch_array($result);
 <br>
 <?php
 $current_date=date("Y-m-d");
-$sql = "SELECT test_name, college_name, meet_link, date, username FROM exam";
+$sql = "SELECT subject, college_name, meet_link, date, username FROM exam";
 $result = $conn->query($sql);
 
  ?>
 <table id="manage">
   <tr>
-    <th>Exam Name</th>
+    <th>Subject</th>
     <th>College Name</th>
     <th>Date</th>
     <th>Meet Link</th>
@@ -148,7 +148,7 @@ $result = $conn->query($sql);
 
     
     echo "<tr>";
-    echo "<td>".$row["test_name"]."</td>";
+    echo "<td>".$row["subject"]."</td>";
     echo "<td>".$row["college_name"]."</td>";
     echo "<td>".$row["date"]."</td>";
     echo "<td>".$row["meet_link"]."</td>";

@@ -77,13 +77,13 @@ $type="";
 		  }
 	}
 
-    if (isset($_POST["collegefname"])) {
-		if (empty($_POST["collegefname"])) {
+    if (isset($_POST["collegename"])) {
+		if (empty($_POST["collegename"])) {
 		  $colnameErr = "College Name is required";
 		  array_push($errors,$colnameErr);
 		} 
         else {
-            $col =$_POST["collegefname"];
+            $col =$_POST["collegename"];
           }
     }
 
