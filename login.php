@@ -195,6 +195,8 @@ a{color:inherit;text-decoration:none}
                 <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo-black"></a>
 
                 <ul class="main-nav">
+                <li><a href="index.php">Home</a></li>
+
                 <li><a href="aboutUs.php">About Us</a></li>
                    <?php
                         if(count($_SESSION)>0)

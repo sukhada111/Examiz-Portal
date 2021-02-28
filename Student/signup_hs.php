@@ -53,21 +53,23 @@ select{
                 <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo-black"></a>
 
                 <ul class="main-nav">
-                <li><a href="aboutUs.php">About Us</a></li>
+                <li><a href="../index.php">Home</a></li>
+
+                <li><a href="../aboutUs.php">About Us</a></li>
                    <?php
                         if(count($_SESSION)>0)
                         {
                             ?>
                             
-                            <li><a href="logout.php">Logout</a></li>
-                            <li><a href="myProfile.php"><i class="ion-ios-person-outline icon-small" style="color: #333;"></i><?php echo $_SESSION['username'];?></a></li>
+                            <li><a href="../logout.php">Logout</a></li>
+                            <li><a href="profile.php"><i class="ion-ios-person-outline icon-small" style="color: #333;"></i><?php echo $_SESSION['username'];?></a></li>
                             
                             <?php
                         }
                         else
                         {
                    ?>
-                    <li><a href="login.php">Login</a></li>
+                    <li><a href="../login.php">Login</a></li>
                     <?php
                         }
                     ?>
@@ -182,9 +184,9 @@ if(isset($_POST["password"])){
         <div class="row">
             <div class="col span-1-of-2">
                 <ul class="footer-nav">
-                    <li><a href="aboutUs.php">About us</a></li>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="login.php">Login</a></li>
+                    <li><a href="../aboutUs.php">About us</a></li>
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="../login.php">Login</a></li>
 
 
                 </ul>
