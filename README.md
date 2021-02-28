@@ -16,3 +16,16 @@ notified about the subscribed tests via email. Students can also use the materia
 prepare themselves for the tests and pass with flying colours.<br><br>
 Happy learning!
 
+## *Features:*
+- User-friendly UI
+- Well-formatted content
+- Effective navigation
+- Enable email notifications 
+- Test preparation material
+- Float exam notices
+
+## *Team Members:*
+- Jay Khatri
+- Sukhada Virkar
+- Aiswarya Suresh
+- Rhutuja Thakur
