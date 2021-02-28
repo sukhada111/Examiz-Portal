@@ -1,5 +1,7 @@
 <?php
 include('header.php');
+session_start();
+$_SESSION['username']='suuij';
 ?>
 <div class="wrapper">
   <div class="top_navbar">
@@ -36,7 +38,7 @@ include('header.php');
               </div>
               <div class="profile_info">
                  <p style="color:white">Welcome</p>
-                 <p class="profile_name">Alex John</p>
+                 <p class="profile_name"><?php echo $_SESSION['username'];?></p>
               </div>
             </div>
             <ul>
