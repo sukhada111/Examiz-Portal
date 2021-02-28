@@ -24,6 +24,10 @@ Happy learning!
 - Test preparation material
 - Float exam notices
 
+## *Tech Stack Used:*
+- Resources needed: XAMPP server, Visual Studio, Web browser
+- Languages used: HTML/CSS, Bootstrap, PHP, MySQL
+
 ## *Team Members:*
 - Jay Khatri
 - Sukhada Virkar
