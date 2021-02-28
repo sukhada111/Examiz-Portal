@@ -1,6 +1,5 @@
 <?php
 //new index file
-
 session_start();
 
 ?>
@@ -77,22 +76,21 @@ session_start();
                 <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo-black"></a>
 
                 <ul class="main-nav">
-                <li><a href="#">About Us</a></li>
+                <li><a href="aboutUs.php">About Us</a></li>
                    <?php
                         if(count($_SESSION)>0)
                         {
                             ?>
                             
                             <li><a href="logout.php">Logout</a></li>
-                            <li><a href="myProfile.php"><i class="ion-ios-person-outline icon-small" style="color: #ddd;"></i><?php echo $_SESSION['username'];?></a></li>
+                            <li><a href="myProfile.php"><i class="ion-ios-person-outline icon-small" style="color: #333;"></i><?php echo $_SESSION['username'];?></a></li>
                             
                             <?php
                         }
                         else
                         {
                    ?>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="login.php">Login</a></li>
                     <?php
                         }
                     ?>
@@ -108,14 +106,48 @@ session_start();
             <div class="left">
             <h1>One stop Destination<br>
             for all your Exams</h1>
-            <div class="dropdown">
-            <button class="dropbtn">Sign Up as Student</button>
-            <div class="dropdown-content">
-            <a href="#">Junior College</a>
-            <a href="#">Undergraduate</a>
-            </div>
-            </div>
-        <a class="btn btn-ghost" href="aboutUs.php">Sign Up as Organization</a>
+            <?php
+                        if(count($_SESSION)>0)
+                        {
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "";
+                            $dbname = "hackerbash";
+                            $conn = mysqli_connect($servername, $username, $password, $dbname) or die("Connection failed: " . mysqli_connect_error());
+                            $uname=$_SESSION['username'];
+                            $sql="SELECT * FROM user WHERE username='$uname'";
+                            $result = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
+                            $record = mysqli_fetch_array($result);
+                            if($record['login_role']=='student')
+                            {
+                            ?>
+                            <a class="btn btn-ghost" href="Student/profile.php">Go to Dashboard</a>
+                            <?php
+                            }
+                            else{
+                            ?>
+                        <a class="btn btn-ghost" href="Organization/orgprofile.php">Go to Dashboard</a>
+
+                            <?php
+                            }
+                            ?>
+                            <?php
+                        }
+                        else
+                        {
+                   ?>
+                   <div class="dropdown">
+                    <button class="dropbtn">Sign Up as Student</button>
+                    <div class="dropdown-content">
+                    <a href="Student/signup_hs.php">High School</a>
+                    <a href="Student/signup_ug.php">Undergraduate</a>
+                    </div>
+                    </div>
+                <a class="btn btn-ghost" href="Organization/orgsignup.php">Sign Up as Organization</a>
+                    <?php
+                        }
+                    ?>
+            
             </div>
         </div>
         <img src="resources/img/headbg.jpg" alt="" class="right">
@@ -140,13 +172,14 @@ if(count($_SESSION)>0)
                             <?php
 
                         }
+                    }
                         ?>
             
             <h2>Our Salient Features</h2>
         </div>
         <div class="row">
             <div class="col span-1-of-3 box">
-            <img src="resources/img/notification.png" alt="" class="icon-small" style="padding-bottom:10px;">
+            <img src="resources/img/notification.png" alt="" class="icon-small" style="padding-bottom:10px; color:#eee;">
                 <h3>Get Regular Exam Updates</h3>
                 <p>
                 Lets students subscribe to tests so that they can see it on their feeds in order to stay updated and be regularly notified about upcoming tests

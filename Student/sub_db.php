@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -15,7 +14,7 @@ session_start();
  $result = mysqli_query($conn, $query) or die("database error:". mysqli_error($conn));
  $record = mysqli_fetch_array($result);
  $mail=$record['e_mail'];
-mail("$mail",'Test','Hellooo','From: examiz928@gmail.com');
+mail("$mail",'Subscription','Hello! Your Subsription is successfully completed! Best Wishes from Team Examiz.','From: examiz928@gmail.com');
 ?>
       <?php
       $sql="SELECT * FROM student WHERE username='$uname'";

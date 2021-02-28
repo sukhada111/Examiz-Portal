@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 $dbHost = "localhost";
 $dbUser = "root";
 $dbPass = "";
@@ -38,7 +41,7 @@ $errors = array();
              {  
                   if(password_verify($pwd, $row["password"]))  
                   {  
-                    $_SESSION['username'] = $username;
+                    $_SESSION['username'] = $uname;
                     $_SESSION['success'] = "You are now logged in";
                     header('Location: index.php?LoginSuccess'); 
                   }  

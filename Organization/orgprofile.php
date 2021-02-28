@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <?php
 
@@ -35,13 +36,14 @@ include('sidebar.php');
         }
 </style>
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "hackerbash";
 $conn = mysqli_connect($servername, $username, $password, $dbname) or die("Connection failed: " . mysqli_connect_error());
-$uname=$_SESSION['username'];
-$sql="SELECT * FROM oranization WHERE username='$uname'";
+$uname= $_SESSION['username'];
+$sql="SELECT * FROM organization WHERE username='$uname'";
 $result = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
 $record = mysqli_fetch_array($result);
 ?>

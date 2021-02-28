@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 include('header.php');
 ?>
 <div class="wrapper">
@@ -30,7 +33,7 @@ include('header.php');
               </div>
               <div class="profile_info">
                  <p style="color:white">Welcome</p>
-                 <p class="profile_name">Alex John</p>
+                 <p class="profile_name"><?php echo $_SESSION['username'];?></p>
               </div>
             </div>
             <ul>

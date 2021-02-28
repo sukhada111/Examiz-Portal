@@ -1,3 +1,6 @@
+<?php include('server1.php') ;
+session_start();
+?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <?php
 include('header.php');
@@ -116,7 +119,7 @@ include('header.php');
       <a href="#"><img src="../resources/img/logo-examiz.png" alt="Examiz Logo" class="logo" style="height:80px;width:auto;"></a>
       <div class="right_menu">
         <ul>
-          <li>Logout <i class="fas fa-user"></i>
+        <li><a href="../logout.php"> Logout <i class="fas fa-user"></a></i>
             <!-- <div class="profile_dd">
                <div class="dd_item">Profile</div>
                <div class="dd_item">Change Password</div>
@@ -137,12 +140,12 @@ include('header.php');
               </div>
               <div class="profile_info">
                  <p style="color:white">Welcome</p>
-                 <p class="profile_name">Jay Khatri</p>
+                 <p class="profile_name"><?php echo $_SESSION['username'];?></p>
               </div>
             </div>
             <ul>
             <li>
-                <a href="profile.php" >
+                <a href="orgprofile.php" >
                   <span class="icon"><i class="fas fa-id-card"></i></span>
                   <span class="title">My Profile</span>
                 </a>
@@ -178,19 +181,38 @@ include('header.php');
   <!-- </div>
   
 </div>	 -->
+
 <div class="container" >
         <center>
           <h1>Create Exam</h1>
           <div class="testbox">
-            <form action="/">
+            <form action="server1.php" method="post">
               <hr/>
               <div class="item">
                 <p>Date</p>
-                <input type="date" name="date" required/>
+                <input id="date" type="date" name="date" required/>
+                <?php if(isset($_POST["date"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $dateErr;?></span>
+                  <?php
+                }
+                ?>
+
+                <p>College Name</p>
+                <input id="clgname" type="text" name="clgname" required/>
+                <?php if(isset($_POST["clgname"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $clgnameErr;?></span>
+                  <?php
+                }
+                ?>
+              </div>
                 
-           
+              <div class="item">
                 <p>Year</p>          
-               <select>
+               <select id="year" type="text" name="year">
                     <option value=""></option>
                     <option value="1">FY</option>
                     <option value="2">SY</option>
@@ -198,29 +220,110 @@ include('header.php');
                     <option value="4">LY</option>
       
                   </select>
-              </div>
-              <div class="item">
-                <p>Branch</p>
-                <input type="text" name="branch"/>
+                  <?php if(isset($_POST["year"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $yearErr;?></span>
+                  <?php
+                }
+                ?>
+
+                <p>Time</p>
+                <input id="time" type="time" name="time"/>
+                <?php if(isset($_POST["time"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $timeErr;?></span>
+                  <?php
+                }
+                ?>
               
+              
+                <p>Branch</p>
+                <input id="branch" type="text" name="branch"/>
+                <?php if(isset($_POST["branch"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $branchErr;?></span>
+                  <?php
+                }
+                ?>
+                </div>
+
+                <div class="item">
                 <p>Subject</p>          
-                <input type="text" name="subject" />
-              </div>
+                <input id="subject" type="text" name="subject" />
+                <?php if(isset($_POST["subject"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $subjectErr;?></span>
+                  <?php
+                }
+                ?>
+
+                <p>Semester</p>          
+                <input id="semester" type="text" name="semester" />
+                <?php if(isset($_POST["semester"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $semesterErr;?></span>
+                  <?php
+                }
+                ?>
+    </div>
+              
       <div class="item">
                 <p>Duration</p>          
-                <input type="text" name="duration" />
+                <input id="duration" type="text" name="duration" />
+                <?php if(isset($_POST["duration"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $durationErr;?></span>
+                  <?php
+                }
+                ?>
+
+                <p>Marks</p>          
+                <input id="marks" type="text" name="marks" />
+                <?php if(isset($_POST["marks"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $marksErr;?></span>
+                  <?php
+                }
+                ?>
+                </div>
+
+                <div class="item">
+                <p>Medium</p>          
+                <input id="medium" type="text" name="medium" />
+                <?php if(isset($_POST["medium"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $mediumErr;?></span>
+                  <?php
+                }
+                ?>
               
                 <p>Meet Link</p>          
-                <input type="text" name="link" />
+                <input id="link" type="text" name="link" />
+                <?php if(isset($_POST["link"]))
+                {
+                  ?>
+                  <span class="error"><?php echo $linkErr;?></span>
+                  <?php
+                }
+                ?>
               </div>
             
              
              
               <div class="btn-block">
-                <button type="submit" href="/">Create Exam</button>
+                <button name="submit" type="submit" href="/">Create Exam</button>
               </div>
             </form>
           </div>
+              
     </center>
   </div>
 
