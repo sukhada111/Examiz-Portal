@@ -209,8 +209,8 @@ a{color:inherit;text-decoration:none}
                         // else
                         // {
                    ?>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="login.php">Login</a></li>
+                    <li><a href="index.php">Sign Up</a></li>
                     <?php
                         //}
                     ?>

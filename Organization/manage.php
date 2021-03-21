@@ -145,11 +145,15 @@ $uname=$_SESSION['username'];
     <th>Exam Name</th>
     <th>College Name</th>
     <th>Date</th>
+    <th>Branch</th>
+    <th>Semester</th>
+    <th>Time</th>
     <th>Action</th>
   </tr>
 <?php
 
-if($stmt = $conn->query("SELECT * FROM exam WHERE username='$uname'")){
+if($stmt = $conn->query("SELECT * FROM exam WHERE username='$uname'"))
+{
 while ($row = $stmt->fetch_assoc()) {
   ?>  
 
@@ -157,38 +161,46 @@ while ($row = $stmt->fetch_assoc()) {
       <td><?php echo $row['subject'];?></td>
       <td><?php echo $row['college_name'];?></td>
       <td><?php echo $row['date'];?></td>
-      <td>  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Edit</button>
+      <td><?php echo $row['branch'];?></td>
+      <td><?php echo $row['semester'];?></td>
+      <td><?php echo $row['time'];?></td>
+      <!-- <td>  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Edit</button> -->
+      <td> <button type="button" class="btn btn-info btn-lg"><a href="edit.php?ex=<?php echo $row['exam_id'];?>">Edit</a></button>
 </td>
-      <div class="container">
+      <!-- <div class="container"> -->
   <!-- Trigger the modal with a button -->
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <!-- <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
-      <div class="modal-content">
+      <!-- <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit Exam</h4>
-        </div>
-        <div class="modal-body">
+        </div> -->
+        <!-- <div class="modal-body">
+        <form action="change.php" method="post" role="form">
           <p>Date</p>          
                 <input id="date" type="date" name="date" />
           <p><br>Link</p>          
                 <input id="link" type="text" name="link" />
           <p><br>Time</p>          
                 <input id="time" type="time" name="time" />
-        </div>
+                <!-- <input type="hidden" name="id" value=""> -->
+        <!-- </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Edit</button>
+          <input type="submit" class="btn btn-default" data-dismiss="modal" name="changeform">
+        
         </div>
+        </form>
       </div>
       
     </div>
   </div>
   
-</div>
+</div> -->
 
 </tr>
  <?php
