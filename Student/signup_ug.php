@@ -48,8 +48,8 @@ select{
     <!-- HEADER AND NAVBAR -->
     <nav>
             <div class="row">
-                <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo"></a>
-                <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo-black"></a>
+                <a href="index.php"><img src="../resources/img/logo-examiz.png" alt="Examiz Logo" class="logo"></a>
+                <!-- <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo-black"></a> -->
 
                 <ul class="main-nav">
                 <li><a href="../index.php">Home</a></li>

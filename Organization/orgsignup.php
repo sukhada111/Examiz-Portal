@@ -30,16 +30,17 @@ a{color:inherit;text-decoration:none}
     min-height:850px;
     position:relative;
     font:600 16px/18px 'Open Sans',sans-serif;
-    background:url(https://images.unsplash.com/photo-1537202108838-e7072bad1927?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1885&q=80) no-repeat center;
+    background:url("../resources/img/ex1.png") no-repeat center;
     box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+    
 }
 .login-html{
     width:100%;
     height:100%;
     position:absolute;
     padding:40px 70px 50px 70px;
-    background:#1abc9c;
-;}
+   background:rgba(26, 27, 28,0.75);
+    }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
     top:0;
@@ -182,8 +183,8 @@ a{color:inherit;text-decoration:none}
     <!-- HEADER AND NAVBAR -->
     <nav>
             <div class="row">
-                <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo"></a>
-                <a href="index.php"><img src="resources/img/logo-examiz.png" alt="Examiz Logo" class="logo-black"></a>
+                <a href="index.php"><img src="../resources/img/logo-examiz.png" alt="Examiz Logo" class="logo"></a>
+                <a href="index.php"><img src="../resources/img/logo-examiz.png" alt="Examiz Logo" class="logo-black"></a>
 
                 <ul class="main-nav">
                 <li><a href="../index.php">Home</a></li>
