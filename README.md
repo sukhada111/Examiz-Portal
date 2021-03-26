@@ -1,11 +1,13 @@
+# *HackerBash Hackathon Project*
 # *Team Name:* Techie Tribe
 ## *Problem Statement:* 
 An online portal for students for the centralization of all exam-related activity and
 information. Tasks:
+- It should allow Educational institutions to make their own organizations on the portal.
 - It will hold necessary information about the registration link, exam date, medium
-etc regarding the subscribed exam.
-- It will notify the user about all the exams he/she has subscribed to.
-- It should allow educational institutions to make their own organizations on the portal
+etc and students can subscribe for updates about an examination via Email.
+- Educational Institutions can float as well as edit Examination details and students of the respective Institution can access the information in real time.
+
 
 ## *Introduction:*
 Welcome to Examiz, a Smart Exam Portal, the all-in-one portal for students for the centralization of all exam related activity.
